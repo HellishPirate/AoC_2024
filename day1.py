@@ -27,8 +27,10 @@ for i in range(len(day1input)):
     day1input[list2Min,1] = np.nan
      
 totalDistance = np.sum(distances)
+print("Part 1: %d" %totalDistance)
 
 for i in range(len(day1input)):
     similarityScore[i] = sortedInput[i,0] * np.sum((sortedInput[i,0] == sortedInput[:,1]))
     
 totalSimilarity = np.sum(similarityScore)
+print("Part 2: %d" %totalSimilarity)
