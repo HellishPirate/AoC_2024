@@ -40,7 +40,7 @@ for i in range(len(day2input)):
         test = (entry1 == np.sort(entry1))
         test1 = (entry1 == np.flip(np.sort(entry1)))
         test2 = (sum(counts) == len(counts))
-        if (all(test) or all(test1)) and test2 == True and safeRows[i] == 0 and safeFlag == 0:
+        if (all(test) or all(test1)) and test2 == True and not safeRows[i] and not safeFlag:
             for k in range(len(entry1)-1):
                 differences[k] = np.abs(entry1[k] - entry1[k+1])
             test3 = differences <= 3 
