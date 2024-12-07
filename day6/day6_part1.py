@@ -32,7 +32,6 @@ while y >= 0 and x >= 0:
     try:
         if direction == "up":
             if mapNumArr[x-1, y] == 0:
-                # posCount = posCount + 1
                 mapNumArr[x, y] = posCount
                 testArr[x, y] = 1
                 x = x - 1
@@ -47,7 +46,6 @@ while y >= 0 and x >= 0:
         
         if direction == "right":
             if mapNumArr[x, y+1] == 0:
-                # posCount = posCount + 1
                 mapNumArr[x, y] = posCount
                 testArr[x, y] = 1
                 y = y + 1
@@ -62,7 +60,6 @@ while y >= 0 and x >= 0:
                 
         if direction == "down":
             if mapNumArr[x+1, y] == 0:
-                # posCount = posCount + 1
                 mapNumArr[x, y] = posCount
                 testArr[x, y] = 1
                 x = x + 1
@@ -77,7 +74,6 @@ while y >= 0 and x >= 0:
         
         if direction == "left":
             if mapNumArr[x, y-1] == 0:
-                # posCount = posCount + 1
                 mapNumArr[x, y] = posCount
                 testArr[x, y] = 1
                 y = y - 1
