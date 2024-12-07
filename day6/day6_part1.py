@@ -85,6 +85,5 @@ while y >= 0 and x >= 0:
             testArr[x, y] = 1
             y = y - 2
 
-posCount = posCount - 3
 sumUnique = np.sum(testArr)
 print("Part 1: %d" %sumUnique)
