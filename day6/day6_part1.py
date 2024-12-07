@@ -29,64 +29,62 @@ x = guardPos[0]; y = guardPos[1]
 direction = "up"
 posCount = 3
 while y >= 0 and x >= 0:
-    try:
-        if direction == "up":
-            if mapNumArr[x-1, y] == 0:
-                mapNumArr[x, y] = posCount
-                testArr[x, y] = 1
-                x = x - 1
-            elif mapNumArr[x-1, y] == 1:
-                direction = "right"
-            elif mapNumArr[x-1, y] == 2:
-                x = x - 1
-            elif mapNumArr[x-1, y] >= 3:
-                mapNumArr[x, y] = posCount
-                testArr[x, y] = 1
-                x = x - 2
+    if direction == "up":
+        if mapNumArr[x-1, y] == 0:
+            mapNumArr[x, y] = posCount
+            testArr[x, y] = 1
+            x = x - 1
+        elif mapNumArr[x-1, y] == 1:
+            direction = "right"
+        elif mapNumArr[x-1, y] == 2:
+            x = x - 1
+        elif mapNumArr[x-1, y] >= 3:
+            mapNumArr[x, y] = posCount
+            testArr[x, y] = 1
+            x = x - 2
         
-        if direction == "right":
-            if mapNumArr[x, y+1] == 0:
-                mapNumArr[x, y] = posCount
-                testArr[x, y] = 1
-                y = y + 1
-            elif mapNumArr[x, y+1] == 1:
-                direction = "down"
-            elif mapNumArr[x, y+1] == 2:
-                y = y + 1
-            elif mapNumArr[x, y+1] >= 3:
-                mapNumArr[x, y] = posCount
-                testArr[x, y] = 1
-                y = y + 2
+    if direction == "right":
+        if mapNumArr[x, y+1] == 0:
+            mapNumArr[x, y] = posCount
+            testArr[x, y] = 1
+            y = y + 1
+        elif mapNumArr[x, y+1] == 1:
+            direction = "down"
+        elif mapNumArr[x, y+1] == 2:
+            y = y + 1
+        elif mapNumArr[x, y+1] >= 3:
+            mapNumArr[x, y] = posCount
+            testArr[x, y] = 1
+            y = y + 2
                 
-        if direction == "down":
-            if mapNumArr[x+1, y] == 0:
-                mapNumArr[x, y] = posCount
-                testArr[x, y] = 1
-                x = x + 1
-            elif mapNumArr[x+1, y] == 1:
-                direction = "left"
-            elif mapNumArr[x+1, y] == 2:
-                x = x + 1
-            elif mapNumArr[x+1, y] >= 3:
-                mapNumArr[x, y] = posCount
-                testArr[x, y] = 1
-                x = x + 2
+    if direction == "down":
+        if mapNumArr[x+1, y] == 0:
+            mapNumArr[x, y] = posCount
+            testArr[x, y] = 1
+            x = x + 1
+        elif mapNumArr[x+1, y] == 1:
+            direction = "left"
+        elif mapNumArr[x+1, y] == 2:
+            x = x + 1
+        elif mapNumArr[x+1, y] >= 3:
+            mapNumArr[x, y] = posCount
+            testArr[x, y] = 1
+            x = x + 2
         
-        if direction == "left":
-            if mapNumArr[x, y-1] == 0:
-                mapNumArr[x, y] = posCount
-                testArr[x, y] = 1
-                y = y - 1
-            elif mapNumArr[x, y-1] == 1:
-                direction = "up"
-            elif mapNumArr[x, y-1] == 2:
-                y = y - 1
-            elif mapNumArr[x, y-1] >= 3:
-                mapNumArr[x, y] = posCount
-                testArr[x, y] = 1
-                y = y - 2
-    except:
-        break
+    if direction == "left":
+        if mapNumArr[x, y-1] == 0:
+            mapNumArr[x, y] = posCount
+            testArr[x, y] = 1
+            y = y - 1
+        elif mapNumArr[x, y-1] == 1:
+            direction = "up"
+        elif mapNumArr[x, y-1] == 2:
+            y = y - 1
+        elif mapNumArr[x, y-1] >= 3:
+            mapNumArr[x, y] = posCount
+            testArr[x, y] = 1
+            y = y - 2
+
 posCount = posCount - 3
 sumUnique = np.sum(testArr)
 print("Part 1: %d" %sumUnique)
