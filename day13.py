@@ -12,9 +12,7 @@ day13input = open("day13.txt").readlines()
 
 tokens = np.zeros((len(day13input),))
 tokensPart2 = np.zeros((len(day13input),))
-for i in range(len(day13input)):
-    if i % 4 != 0:
-        continue
+for i in range(0,len(day13input),4):
     Arow1 = re.findall("\\d{2,}", day13input[i])
     Arow2 = re.findall("\\d{2,}", day13input[i+1])
     B = re.findall("\\d{2,}", day13input[i+2])
