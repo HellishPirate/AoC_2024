@@ -128,14 +128,3 @@ executeOp()
 
 print("Part 1:")
 print(*programOutput, sep=",")
-
-outputPattern = []
-for i in range(4097):
-    instructionPointer = 0
-    programOutput = []
-    registers[0] = float(re.findall("\\d{1,}", day17input[0])[0])
-    registers[1] = float(re.findall("\\d{1,}", day17input[1])[0])
-    registers[2] = float(re.findall("\\d{1,}", day17input[2])[0])
-    registers[0] = i
-    executeOp()
-    outputPattern.append(programOutput)
