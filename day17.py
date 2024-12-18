@@ -1,4 +1,3 @@
-print("\033[2J\033[H", end="", flush=True)
 # -*- coding: utf-8 -*-
 """
 Created on Tue Dec 17 16:56:29 2024
